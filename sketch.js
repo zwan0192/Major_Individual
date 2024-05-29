@@ -445,7 +445,7 @@ function drawYellowLines(lines, isHorizontal) {
   for (let i = 0; i < lines.length; i++) {
     let line = lines[i];
     let noiseVal = noise(noiseOffsetX + line.x * noiseIncrement, noiseOffsetY + line.y * noiseIncrement);
-    let dynamicWidth = map(noiseVal, 0, 1, 18, 30); 
+    let dynamicWidth = map(noiseVal, 0, 1, 18, 22); 
     fill(234, 212, 51);
     noStroke();
     if (isHorizontal) {
