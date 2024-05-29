@@ -1,3 +1,8 @@
+//Set the perlin noise
+let noiseOffsetX = 0;
+let noiseOffsetY = 0;
+let noiseIncrement = 0.01;
+
 function setup() {
   //Create square canvas
   createCanvas(min(windowWidth, windowHeight), min(windowWidth, windowHeight));
