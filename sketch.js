@@ -106,9 +106,9 @@ function draw() {
     { x: 250 * width / 800, y: 346 * height / 800, w: 33 * width / 800, h: 25 * height / 800 },
     { x: 327 * width / 800, y: 346 * height / 800, w: 54 * width / 800, h: 18 * height / 800 },
     { x: 327 * width / 800, y: 378 * height / 800, w: 54 * width / 800, h: 43 * height / 800 },
-    { x: 343 * width / 800, y: 450 * height / 800, w: 33 * width / 800, h: 18 * height / 800 },
+    { x: 342 * width / 800, y: 450 * height / 800, w: 35 * width / 800, h: 18 * height / 800 },
     { x: 573 * width / 800, y: 386 * height / 800, w: 42 * width / 800, h: 35 * height / 800 },
-    { x: 578 * width / 800, y: 450 * height / 800, w: 40 * width / 800, h: 18 * height / 800 },
+    { x: 577 * width / 800, y: 450 * height / 800, w: 40 * width / 800, h: 18 * height / 800 },
     { x: 559 * width / 800, y: 479 * height / 800, w: 68 * width / 800, h: 21 * height / 800 },
     { x: 137 * width / 800, y: 635 * height / 800, w: 23 * width / 800, h: 20 * height / 800 },
   ]
@@ -427,7 +427,7 @@ function draw() {
   drawGraph(greyPart, color(217, 216, 212));
   drawSquare(greySquare, color(217, 216, 212));
   drawRedSquare(redSquare);
-  drawSquare(blueSquare, color(72, 106, 188));
+  drawBlueSquare(blueSquare);
   drawGraph(yellowPart1, color(234, 212, 51));
 }
 
@@ -457,6 +457,20 @@ function drawRedSquare(squares) {
     let noiseVal = noise(noiseOffsetX + x * noiseIncrement, noiseOffsetY + y * noiseIncrement);
     let colorVal = map(noiseVal, 0, 1, 0, 255);
     fill(255, colorVal, colorVal); 
+    rect(x, y, 18 * width / 800, 18 * height / 800);
+  }
+  noiseOffsetX += noiseIncrement;
+  noiseOffsetY += noiseIncrement;
+}
+
+//Set the function to change the color of blue squares
+function drawBlueSquare(squares) {
+  for (let i = 0; i < squares.length; i++) {
+    let x = squares[i].x;
+    let y = squares[i].y;
+    let noiseVal = noise(noiseOffsetX + x * noiseIncrement, noiseOffsetY + y * noiseIncrement);
+    let colorVal = map(noiseVal, 0, 1, 0, 255);
+    fill(colorVal, colorVal, 255); 
     rect(x, y, 18 * width / 800, 18 * height / 800);
   }
   noiseOffsetX += noiseIncrement;
