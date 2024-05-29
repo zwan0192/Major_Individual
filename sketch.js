@@ -1,7 +1,7 @@
 //Set the perlin noise
 let noiseOffsetX = 0;
 let noiseOffsetY = 0;
-let noiseIncrement = 0.01;
+let noiseIncrement = 0.006;
 
 function setup() {
   //Create square canvas
@@ -425,7 +425,7 @@ function draw() {
   drawGraph(redPart, color(174, 56, 42));
   drawGraph(bluePart, color(72, 106, 188));
   drawGraph(greyPart, color(217, 216, 212));
-  drawSquare(greySquare, color(217, 216, 212));
+  drawGreySquare(greySquare);
   drawRedSquare(redSquare);
   drawBlueSquare(blueSquare);
   drawGraph(yellowPart1, color(234, 212, 51));
@@ -471,6 +471,20 @@ function drawBlueSquare(squares) {
     let noiseVal = noise(noiseOffsetX + x * noiseIncrement, noiseOffsetY + y * noiseIncrement);
     let colorVal = map(noiseVal, 0, 1, 0, 255);
     fill(colorVal, colorVal, 255); 
+    rect(x, y, 18 * width / 800, 18 * height / 800);
+  }
+  noiseOffsetX += noiseIncrement;
+  noiseOffsetY += noiseIncrement;
+}
+
+//Set the function to change the color of grey squares
+function drawGreySquare(squares) {
+  for (let i = 0; i < squares.length; i++) {
+    let x = squares[i].x;
+    let y = squares[i].y;
+    let noiseVal = noise(noiseOffsetX + x * noiseIncrement, noiseOffsetY + y * noiseIncrement);
+    let colorVal = map(noiseVal, 0, 1, 128, 255);
+    fill(colorVal, colorVal, colorVal); 
     rect(x, y, 18 * width / 800, 18 * height / 800);
   }
   noiseOffsetX += noiseIncrement;
