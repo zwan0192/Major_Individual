@@ -426,7 +426,7 @@ function draw() {
   drawGraph(bluePart, color(72, 106, 188));
   drawGraph(greyPart, color(217, 216, 212));
   drawSquare(greySquare, color(217, 216, 212));
-  drawSquare(redSquare, color(174, 56, 42));
+  drawRedSquare(redSquare);
   drawSquare(blueSquare, color(72, 106, 188));
   drawGraph(yellowPart1, color(234, 212, 51));
 }
@@ -447,6 +447,20 @@ function drawSquare(squares, col) {
   for (let square of squares) {
     rect(square.x, square.y, 18 * width / 800, 18 * height / 800);
   }
+}
+
+//Set the function to change the color of red squares
+function drawRedSquare(squares) {
+  for (let i = 0; i < squares.length; i++) {
+    let x = squares[i].x;
+    let y = squares[i].y;
+    let noiseVal = noise(noiseOffsetX + x * noiseIncrement, noiseOffsetY + y * noiseIncrement);
+    let colorVal = map(noiseVal, 0, 1, 0, 255);
+    fill(255, colorVal, colorVal); 
+    rect(x, y, 18 * width / 800, 18 * height / 800);
+  }
+  noiseOffsetX += noiseIncrement;
+  noiseOffsetY += noiseIncrement;
 }
 
 //Set the function to resize the canvas with the window
