@@ -419,8 +419,8 @@ function draw() {
   ]
 
   //draw all parts of the artwork
-  drawGraph(yellowLines1, color(234, 212, 51));
-  drawGraph(yellowLines2, color(234, 212, 51));
+  drawYellowLines(yellowLines1, true);
+  drawYellowLines(yellowLines2, false);
   drawGraph(yellowPart, color(234, 212, 51));
   drawGraph(redPart, color(174, 56, 42));
   drawGraph(bluePart, color(72, 106, 188));
@@ -438,6 +438,24 @@ function drawGraph(graphs, col) {
   for (let graph of graphs) {
     rect(graph.x, graph.y, graph.w, graph.h);
   }
+}
+
+//Set the function to draw different yellow lines
+function drawYellowLines(lines, isHorizontal) {
+  for (let i = 0; i < lines.length; i++) {
+    let line = lines[i];
+    let noiseVal = noise(noiseOffsetX + line.x * noiseIncrement, noiseOffsetY + line.y * noiseIncrement);
+    let dynamicWidth = map(noiseVal, 0, 1, 18, 30); 
+    fill(234, 212, 51);
+    noStroke();
+    if (isHorizontal) {
+      rect(line.x, line.y, line.w, dynamicWidth);
+    } else {
+      rect(line.x, line.y, dynamicWidth, line.h);
+    }
+  }
+  noiseOffsetX += noiseIncrement;
+  noiseOffsetY += noiseIncrement;
 }
 
 //Set the function to draw different squares
