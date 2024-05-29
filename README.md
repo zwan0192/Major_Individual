@@ -15,9 +15,8 @@ I chose to drive my individual code using Perlin noise. Perlin noise is a gradie
 
 ## Inspiration
 I was inspired by visualizations that use Perlin noise to create organic, flowing patterns. Images and gifs that show gradient transitions and smooth morphing shapes influenced my submission.
-
-[link of perlin noise color changing](https://celiawrite.medium.com/learn-apply-p5-js-b927e254cf11)
 ![an image of perlin noise color changing](readmeimages/1*p0jKGhPqFVfsTieU8BgmDg.gif)
+[link of perlin noise color changing](https://celiawrite.medium.com/learn-apply-p5-js-b927e254cf11)
 
 ## Technical Explanation
 - Perlin Noise-Driven Color Changes
