@@ -11,10 +11,12 @@ I chose to drive my individual code using Perlin noise. Perlin noise is a gradie
 ## Animated Properties
 - Different Color Squares: The colors of the squares change dynamically based on Perlin noise. This introduces a smooth, organic variation in their appearance, simulating a pulsing effect.
 - Yellow Lines: The widths of the yellow lines vary dynamically based on Perlin noise. This adds a sense of fluidity and motion to the otherwise static lines.
-These animated properties make the work unique from other group members by focusing on smooth, continuous color changes and line width variations driven by Perlin noise.
+- These animated properties make the work unique from other group members by focusing on smooth, continuous color changes and line width variations driven by Perlin noise.
 
 ## Inspiration
-I was inspired by visualizations that use Perlin noise to create organic, flowing patterns.     Images and gifs that show gradient transitions and smooth morphing shapes influenced my submission.
+I was inspired by visualizations that use Perlin noise to create organic, flowing patterns. Images and gifs that show gradient transitions and smooth morphing shapes influenced my submission.
+[link text](https://celiawrite.medium.com/learn-apply-p5-js-b927e254cf11)
+![an image of perlin noise color changing](readmeimages/1*p0jKGhPqFVfsTieU8BgmDg.gif)
 
 ## Technical Explanation
 - Perlin Noise-Driven Color Changes
